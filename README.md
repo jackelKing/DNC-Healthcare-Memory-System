@@ -17,19 +17,19 @@ streamlit run ui/app.py
 - "Why did the patient develop neuropathy?"
 - "What triggered the heart failure?"
 - "What caused the cerebral thrombosis?"
-
+  
 ## Architecture
 project_root/
 ├── core/
 │   ├── memory_matrix.py        # N×W DNC memory matrix with cosine addressing and temporal linkage
 │   └── dnc_controller.py       # Embeds events, writes to memory, performs hybrid queries (70/15/15)
 ├── reasoning/
-│   └── causal_graph.py         # NetworkX DAG for causal reasoning, multi-hop traversal, PageRank scoring
+│   └── causal_graph.py         # NetworkX DAG, multi-hop traversal, PageRank scoring
 ├── retrieval/
-│   └── engine.py               # Semantic search with temporal filtering and causal traversal
+│   └── engine.py               # Semantic search + temporal filter + causal traversal
 ├── explainability/
-│   └── explainer.py            # Generates JSON outputs, rule chains, and LLM-based narratives
+│   └── explainer.py            # JSON output + rule chains + LLM narrative
 ├── ollama_client/
-│   └── client.py               # Handles retries, caching, and n-gram fallback for offline scenarios
+│   └── client.py               # Retry, caching, n-gram fallback (offline support)
 └── ui/
-    └── app.py                  # Streamlit UI with 5 tabs: Query, Timeline, Graph, Heatmap, Debug
+    └── app.py                 # Streamlit UI (Query, Timeline, Graph, Heatmap, Debug)
