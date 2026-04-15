@@ -19,6 +19,7 @@ streamlit run ui/app.py
 - "What caused the cerebral thrombosis?"
   
 ## Architecture
+```
 project_root/
 ├── core/
 │   ├── memory_matrix.py        # N×W DNC memory matrix with cosine addressing and temporal linkage
@@ -33,3 +34,4 @@ project_root/
 │   └── client.py               # Retry, caching, n-gram fallback (offline support)
 └── ui/
     └── app.py                 # Streamlit UI (Query, Timeline, Graph, Heatmap, Debug)
+```
